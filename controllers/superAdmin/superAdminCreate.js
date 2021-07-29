@@ -1,28 +1,7 @@
 const userDB = require("../../models/superAdminModel");
 
 const addSuperAdmin = async (req, res) => {
-  const {
-    first_name,
-    last_name,
-    username,
-    password,
-    status,
-    dateOfBirth,
-    presentAddress,
-    presentCity,
-    presentState,
-    presentCountry,
-    presentPincode,
-    permanentAddress,
-    permanentCity,
-    permanentState,
-    permanentCountry,
-    permanentPincode,
-    logo,
-    facebookUrl,
-    twitterUrl,
-    linkdinUrl,
-  } = req.body;
+  const { name, username, password, email, graAvatar } = req.body;
 
   console.log(req.body);
 
@@ -31,26 +10,11 @@ const addSuperAdmin = async (req, res) => {
     throw new Error("No Data Found");
   } else {
     const superAdmin = userDB({
-      first_name,
-      last_name,
+      name,
       username,
       password,
-      status,
-      dateOfBirth,
-      presentAddress,
-      presentCity,
-      presentState,
-      presentCountry,
-      presentPincode,
-      permanentAddress,
-      permanentCity,
-      permanentState,
-      permanentCountry,
-      permanentPincode,
-      logo,
-      facebookUrl,
-      twitterUrl,
-      linkdinUrl,
+      email,
+      graAvatar,
     });
 
     const createAdmin = await superAdmin.save();
