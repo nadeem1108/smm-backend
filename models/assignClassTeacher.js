@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const assignTeacheerSchema = new mongoose.Schema({
+  employeeObjectId:{
+    type:String,
+    required:true,
+  },
   branch: {
     type: String,
     require: true,
