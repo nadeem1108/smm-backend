@@ -4,29 +4,22 @@ const isEmpty = require("./is-empty");
 module.exports = function validateRegisterInput(data) {
   let errors = {};
 
-  data.firstName = !isEmpty(data.firstName) ? data.firstName : "";
-  data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
+  data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
-  data.username = !isEmpty(data.username) ? data.username : "";
+  data.userName = !isEmpty(data.userName) ? data.userName : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-  data.role = !isEmpty(data.role) ? data.role : "";
 
-  if (!Validator.isLength(data.firstName, { min: 3, max: 30 })) {
-    errors.firstName = "First Name must be between 3 and 30 characters";
+  if (!Validator.isLength(data.name, { min: 3, max: 30 })) {
+    errors.name = " Name must be between 3 and 30 characters";
   }
 
-  if (!Validator.isLength(data.lastName, { min: 3, max: 30 })) {
-    errors.lastName = "Last Name must be between 3 and 30 characters";
+
+  if (Validator.isEmpty(data.name)) {
+    errors.name = "Name field is required";
   }
 
-  if (Validator.isEmpty(data.firstName)) {
-    errors.firstName = "First Name field is required";
-  }
-
-  if (Validator.isEmpty(data.lastName)) {
-    errors.lastName = "Last Name field is required";
-  }
+  
 
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
@@ -36,8 +29,8 @@ module.exports = function validateRegisterInput(data) {
     errors.email = "Email is invalid";
   }
 
-  if (Validator.isEmpty(data.username)) {
-    errors.username = "Username field is required";
+  if (Validator.isEmpty(data.userName)) {
+    errors.userName = "userName field is required";
   }
 
   if (Validator.isEmpty(data.password)) {
@@ -56,9 +49,7 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = "Password must match";
   }
 
-  if (Validator.isEmpty(data.role)) {
-    errors.role = "Role is required";
-  }
+ 
 
   return {
     errors,

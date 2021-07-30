@@ -36,4 +36,6 @@ router.use("/class-schedule", require("./classScheduleRoute"));
 
 router.use("/teacher-schedule", require("./teacherScheduleRoute"));
 
+router.use("/employee-academic-details", require("./employeeAcademicDetailsRoute"));
+
 module.exports = router;

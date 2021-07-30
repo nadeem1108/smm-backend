@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../../models/addEmployeeModel");
+const Addemployee = require("../../models/addEmployeeModel");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 
@@ -13,42 +13,48 @@ module.exports = (req, res, next) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then((user) => {
+  Addemployee.findOne({ email: req.body.email }).then((user) => {
     errors.email = "Email already exists";
     if (user) {
       return res.status(400).json(errors);
     } else {
       const {
-        firstName,
-        lastName,
-        email,
+        name,
         contact,
+        email,
+        userName,
         password,
-        qualification,
-        role,
-        presentState,
-        presentCity,
+        password2,
+        gender,
+        religion,
+        profilePicture,
+        dateOfBirth,
         presentAddress,
-        presentPincode,
-        image,
+        permanentAddress,
+        facebookUrl,
+        twitterUrl,
+        linkdinUrl,
         status,
       } = req.body;
       console.log(req.body);
 
-      const newUser = new User({
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        contact: contact,
-        password: password,
-        qualification: qualification,
-        role: role,
-        presentState: presentState,
-        presentCity: presentCity,
-        presentAddress: presentAddress,
-        presentPincode: presentPincode,
-        status: status,
-        image: image,
+      const newUser = new Addemployee({
+        name,
+        contact,
+        email,
+        userName,
+        password,
+        password2,
+        gender,
+        religion,
+        profilePicture,
+        dateOfBirth,
+        presentAddress,
+        permanentAddress,
+        facebookUrl,
+        twitterUrl,
+        linkdinUrl,
+        status,
       });
       // console.log(newUser);
 
