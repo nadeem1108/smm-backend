@@ -10,17 +10,13 @@ module.exports = function validateRegisterInput(data) {
   data.admissionDate = !isEmpty(data.admissionDate) ? data.admissionDate : "";
   data.branch = !isEmpty(data.branch) ? data.branch : "";
   data.standard = !isEmpty(data.standard) ? data.standard : "";
-  data.sec = !isEmpty(data.sec) ? data.sec : "";
-  data.category = !isEmpty(data.category) ? data.category : "";
- 
-  
 
+  data.category = !isEmpty(data.category) ? data.category : "";
 
   if (Validator.isEmpty(data.academicYear)) {
     errors.academicYear = "Academic Year field is required";
   }
 
-  
   if (Validator.isEmpty(data.rollNumber)) {
     errors.rollNumber = "Roll Number field is required";
   }
@@ -39,10 +35,6 @@ module.exports = function validateRegisterInput(data) {
 
   if (Validator.isEmpty(data.standard)) {
     errors.standard = "Standard field is required";
-  }
-
-  if (Validator.isEmpty(data.sec)) {
-    errors.sec = "Sec field is required";
   }
 
   if (Validator.isEmpty(data.category)) {

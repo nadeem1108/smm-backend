@@ -31,13 +31,9 @@ module.exports = (req, res, next) => {
         password: req.body.password,
         password2: req.body.password2,
         presentAddress: req.body.presentAddress,
-        presentCity: req.body.presentCity,
-        presentState: req.body.presentState,
-        presentPincode: req.body.presentPincode,
+        
         permanentAddress: req.body.permanentAddress,
-        permanentCity: req.body.permanentCity,
-        permanentState: req.body.permanentState,
-        permanentPincode: req.body.permanentPincode,
+       
         priviousSchoolName: req.body.priviousSchoolName,
         remarks: req.body.remarks,
         emergencyno: req.body.emergencyno,

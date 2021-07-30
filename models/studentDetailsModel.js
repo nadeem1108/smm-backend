@@ -43,25 +43,8 @@ const studentDetails = new mongoose.Schema({
   presentAddress: {
     type: String,
   },
-  presentCity: {
-    type: String,
-  },
-  presentState: {
-    type: String,
-  },
-  presentPincode: {
-    type: String,
-  },
+  
   permanentAddress: {
-    type: String,
-  },
-  permanentCity: {
-    type: String,
-  },
-  permanentState: {
-    type: String,
-  },
-  permanentPincode: {
     type: String,
   },
   priviousSchoolName: {

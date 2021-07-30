@@ -8,17 +8,16 @@ module.exports = (req, res) => {
     title,
     description,
     date,
-  
+
     status,
-   
-   } = req.body;
+  } = req.body;
   const user = userDB({
     img: img,
-      title: title,
-      description: description,
-      date: date,
-    
-      status:status,
+    title: title,
+    description: description,
+    date: date,
+
+    status: status,
   });
   user
     .save(user)
