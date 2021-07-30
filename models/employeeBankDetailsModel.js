@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
       type: String,
     },
 
-    IFSC_Code: {
+    ifscCode: {
       type: String,
     },
 

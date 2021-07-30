@@ -38,4 +38,6 @@ router.use("/teacher-schedule", require("./teacherScheduleRoute"));
 
 router.use("/employee-academic-details", require("./employeeAcademicDetailsRoute"));
 
+router.use("/employee-bank-details", require("./employeeBankDetailsRoute"));
+
 module.exports = router;
