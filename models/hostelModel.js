@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const hostelSchema = new mongoose.Schema({
+  studentObjectId:{
+    type:String,
+    required:true,
+  },
   transportRoute: {
     type: String,
     required: true,

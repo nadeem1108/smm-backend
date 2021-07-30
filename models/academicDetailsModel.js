@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const academicDetailsSchema = new mongoose.Schema({
+
+  studentObjectId:{
+    type:String,
+    required:true,
+  },
+
   academicYear: {
     type: Date,
     required: true,

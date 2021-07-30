@@ -1,16 +1,10 @@
 const mongoose = require("mongoose");
 
 const feeStructureSchema = new mongoose.Schema({
-  school_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "StudentDetails",
-  },
-
-  student_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "School",
+  
+  studentObjectId:{
+    type:String,
+    required:true,
   },
 
   feeStructure: [

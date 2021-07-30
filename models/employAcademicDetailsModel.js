@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const employeeAcademicSchema = new mongoose.Schema(
   {
+  
+    employeeObjectId:{
+      type:String,
+      required:true,
+    },
     branch: {
       type: String,
     },

@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
+
 const userSchema = new mongoose.Schema(
   {
+    employeeObjectId:{
+      type:String,
+      required:true,
+    },
+
     bankName: {
       type: String,
     },

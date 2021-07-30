@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const guardianDetailSchema = new mongoose.Schema({
+  studentObjectId:{
+    type:String,
+    required:true,
+  },
   firstName: {
     type: String,
     required: true,
