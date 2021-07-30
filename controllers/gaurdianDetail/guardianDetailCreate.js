@@ -1,9 +1,16 @@
 const GuardianDetails = require("../../models/guardianDetailModel");
 
+// Load input validations
+const validateRegisterInput = require("../../validations/gaurdianDetail");
+
 module.exports = (req, res, next) => {
-  if (!req.body) {
-    res.status(400).send({ message: "content can not be empty" });
+  const { errors, isValid } = validateRegisterInput(req.body);
+  
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
   }
+
   const {
     firstName,
     lastName,

@@ -4,11 +4,11 @@ const router = express.Router();
 //middleware
 
 //closeMiddleware
-const guardiansDetailsRouteCreate = require("../controllers/guardianDetail/guardianDetailCreate");
-const guardiansDetailsRouteDelete = require("../controllers/guardianDetail/guardianDetailDelete");
-const guardiansDetailsRouteFind = require("../controllers/guardianDetail/guardianDetailFind");
-const guardiansDetailsRouteFindOne = require("../controllers/guardianDetail/guardianDetailFineOne");
-const guardiansDetailsRouteUpdate = require("../controllers/guardianDetail/guardianDetailUpdate");
+const guardiansDetailsRouteCreate = require("../controllers/gaurdianDetail/guardianDetailCreate");
+const guardiansDetailsRouteDelete = require("../controllers/gaurdianDetail/guardianDetailDelete");
+const guardiansDetailsRouteFind = require("../controllers/gaurdianDetail/guardianDetailFind");
+const guardiansDetailsRouteFindOne = require("../controllers/gaurdianDetail/guardianDetailFineOne");
+const guardiansDetailsRouteUpdate = require("../controllers/gaurdianDetail/guardianDetailUpdate");
 
 router.post("/create", guardiansDetailsRouteCreate);
 router.delete("/delete/:id", guardiansDetailsRouteDelete);

@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-
 const assignTeacheerSchema = new mongoose.Schema({
-
   branch: {
     type: String,
     require: true,
@@ -19,10 +17,8 @@ const assignTeacheerSchema = new mongoose.Schema({
 
   teacherName: {
     type: String,
-    require:true
+    require: true,
   },
-
-  
 });
 
 const AssignTeacher = mongoose.model("AssignTeacher", assignTeacheerSchema);

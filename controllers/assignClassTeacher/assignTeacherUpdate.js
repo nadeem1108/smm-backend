@@ -1,12 +1,17 @@
 const AssignTeacher = require("../../models/assignClassTeacher");
 
-module.exports = (req, res) => {
-  if (!req.body) {
-    res.status(400).send({ message: "data to update can not empty" });
+// Load input validations
+const validateRegisterInput = require("../../validations/assignClassTeacher");
+
+module.exports = (req, res, next) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
   }
   const id = req.params.id;
-  AssignTeacher
-    .findByIdAndUpdate(id, req.body, { userFindAndModify: true })
+  AssignTeacher.findByIdAndUpdate(id, req.body, { userFindAndModify: true })
     .then((data) => {
       if (!data) {
         res

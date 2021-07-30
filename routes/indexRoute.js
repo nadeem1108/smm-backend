@@ -2,6 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
+router.use("/academic-class", require("./academicClassRoute"));
+
 router.use("/academicdetail", require("./academicDetailsRoute"));
 
 router.use("/addemployee", require("./addEmployeeRoute"));

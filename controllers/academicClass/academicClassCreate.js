@@ -1,18 +1,26 @@
 const ClassDB = require("../../models/academicClassModel");
 
-module.exports = (req, res) => {
-  if (!req.body) {
-    res.status(400).send({ message: "content can not be empty" });
-  }
-  const { branch, name, classNum, sec } = req.body;
-const academicClass =  ClassDB({
-    branch:branch,
-    name:name,
-    classNum:classNum,
-    sec:sec
-});
+// Load input validations
+const validateRegisterInput = require("../../validations/addAcademicClass");
 
-  academicClass.save(academicClass)
+module.exports = (req, res, next) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+  
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  const { branch, name, classNum, sec } = req.body;
+  const academicClass = ClassDB({
+    branch: branch,
+    name: name,
+    classNum: classNum,
+    sec: sec,
+  });
+
+  academicClass
+    .save(academicClass)
     .then((data) => {
       res.send(data);
     })

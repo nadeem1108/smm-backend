@@ -10,12 +10,10 @@ const addassignClassTeacherFindOne = require("../controllers/assignClassTeacher/
 const addassignClassTeacherUpdate = require("../controllers/assignClassTeacher/assignTeacherUpdate");
 const addassignClassTeacherDelete = require("../controllers/assignClassTeacher/assignTeacherDelete");
 
-
-router.post("/create",  addassignClassTeacherCreate);
-router.get("/find",  addassignClassTeacherFind);
-router.get("/find/:id",  addassignClassTeacherFindOne);
-router.put("/update/:id",addassignClassTeacherUpdate);
-router.delete("/delete/:id",addassignClassTeacherDelete);
-
+router.post("/create", addassignClassTeacherCreate);
+router.get("/find", addassignClassTeacherFind);
+router.get("/find/:id", addassignClassTeacherFindOne);
+router.put("/update/:id", addassignClassTeacherUpdate);
+router.delete("/delete/:id", addassignClassTeacherDelete);
 
 module.exports = router;
