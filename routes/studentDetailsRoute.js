@@ -1,7 +1,9 @@
 const express = require("express");
-
 const router = express.Router();
+
 //middleware
+const auth = require("../middleware/auth");
+
 
 //closeMiddleware
 const studentDetailsRouteCreate = require("../controllers/studentDetails/studentDetailsCreate");

@@ -1,19 +1,20 @@
 const express = require("express");
-
 const router = express.Router();
+
 //middleware
+const auth = require("../middleware/auth");
 
 //closeMiddleware
-const employeeBankDetailsCreate = require("../controllers/employeeBankDetails/BankDetailsCreate");
-const employeeBankDetailsFind = require("../controllers/employeeBankDetails/BankDetailsFind");
-const employeeBankDetailsFindOne = require("../controllers/employeeBankDetails/BankDetailsFindeOne");
-const employeeBankDetailsUpdate = require("../controllers/employeeBankDetails/BankDetailsUpdate");
-const employeeBankDetailsDelete = require("../controllers/employeeBankDetails/BankDetailsDelete");
+const employeeBankDetailsCreate = require("../controllers/employeeBankDetails/bankDetailsCreate");
+const employeeBankDetailsFind = require("../controllers/employeeBankDetails/bankDetailsFind");
+const employeeBankDetailsFindOne = require("../controllers/employeeBankDetails/bankDetailsFindeOne");
+const employeeBankDetailsUpdate = require("../controllers/employeeBankDetails/bankDetailsUpdate");
+const employeeBankDetailsDelete = require("../controllers/employeeBankDetails/bankDetailsDelete");
 
-router.post("/create", employeeBankDetailsCreate);
-router.get("/find", employeeBankDetailsFind);
-router.get("/find/:id", employeeBankDetailsFindOne);
-router.put("/update/:id", employeeBankDetailsUpdate);
-router.delete("/delete/:id", employeeBankDetailsDelete);
+router.post("/create", auth, employeeBankDetailsCreate);
+router.get("/find", auth, employeeBankDetailsFind);
+router.get("/find/:id", auth, employeeBankDetailsFindOne);
+router.put("/update/:id", auth, employeeBankDetailsUpdate);
+router.delete("/delete/:id", auth, employeeBankDetailsDelete);
 
 module.exports = router;

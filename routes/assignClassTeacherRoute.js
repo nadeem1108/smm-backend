@@ -1,7 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
+
 //middleware
+const auth = require("../middleware/auth");
 
 //closeMiddleware
 const addassignClassTeacherCreate = require("../controllers/assignClassTeacher/assignTeacherCreate");
@@ -10,10 +11,10 @@ const addassignClassTeacherFindOne = require("../controllers/assignClassTeacher/
 const addassignClassTeacherUpdate = require("../controllers/assignClassTeacher/assignTeacherUpdate");
 const addassignClassTeacherDelete = require("../controllers/assignClassTeacher/assignTeacherDelete");
 
-router.post("/create", addassignClassTeacherCreate);
-router.get("/find", addassignClassTeacherFind);
-router.get("/find/:id", addassignClassTeacherFindOne);
-router.put("/update/:id", addassignClassTeacherUpdate);
-router.delete("/delete/:id", addassignClassTeacherDelete);
+router.post("/create", auth, addassignClassTeacherCreate);
+router.get("/find", auth, addassignClassTeacherFind);
+router.get("/find/:id", auth, addassignClassTeacherFindOne);
+router.put("/update/:id", auth, addassignClassTeacherUpdate);
+router.delete("/delete/:id", auth, addassignClassTeacherDelete);
 
 module.exports = router;

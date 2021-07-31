@@ -1,7 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
+
 //middleware
+const auth = require("../middleware/auth");
 
 //closeMiddleware
 const addSubToClassCreate = require("../controllers/assignSubToClass/assignSubToClassCreate");
@@ -10,10 +11,10 @@ const addSubToClassFindOne = require("../controllers/assignSubToClass/assignSubT
 const addSubToClassUpdate = require("../controllers/assignSubToClass/assignSubToClassUpdate");
 const addSubToClassDelete = require("../controllers/assignSubToClass/assignSubToClassDelete");
 
-router.post("/create", addSubToClassCreate);
-router.get("/find", addSubToClassFind);
-router.get("/find/:id", addSubToClassFindOne);
-router.put("/update/:id", addSubToClassUpdate);
-router.delete("/delete/:id", addSubToClassDelete);
+router.post("/create", auth, addSubToClassCreate);
+router.get("/find", auth, addSubToClassFind);
+router.get("/find/:id", auth, addSubToClassFindOne);
+router.put("/update/:id", auth, addSubToClassUpdate);
+router.delete("/delete/:id", auth, addSubToClassDelete);
 
 module.exports = router;

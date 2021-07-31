@@ -1,5 +1,7 @@
 const express = require("express");
-const User = require("../../models/addEmployeeModel");
+const emp = require("../../models/addEmployeeModel");
+const student = require("../../models/studentDetailsModel");
+const school = require("../../models/adminSchoolModel");
 const keys = require("../../middleware/keys");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -12,18 +14,31 @@ const validateLoginInput = require("../../validations/login");
 // @access Public Route
 
 module.exports = (req, res) => {
+
+  
   const { errors, isValid } = validateLoginInput(req.body);
+ 
+  if(req.body.userType==='ADM'){
+    var data = emp;
+  }else if(req.body.userType==='STU'){
+         data = student;
+  }else{
+         data = school;
+  }
+
 
   // Check Validation
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
+  
+
   const email = req.body.email;
   const password = req.body.password;
 
   // Find the user by Email
-  User.findOne({ email }).then((user) => {
+  data.findOne({ email }).then((user) => {
     // check for user
     if (!user) {
       errors.email = "User not found";

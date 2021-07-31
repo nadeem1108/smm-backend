@@ -1,7 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
+
 //middleware
+const auth = require("../middleware/auth");
 
 //closeMiddleware
 const addClassScheduleCreate = require("../controllers/classSchedule/classScheduleCreate");
@@ -10,10 +11,10 @@ const addClassScheduleFindOne = require("../controllers/classSchedule/classSched
 const addClassScheduleUpdate = require("../controllers/classSchedule/classScheduleUpdate");
 const addClassScheduleDelete = require("../controllers/classSchedule/classScheduleDelete");
 
-router.post("/create", addClassScheduleCreate);
-router.get("/find", addClassScheduleFind);
-router.get("/find/:id", addClassScheduleFindOne);
-router.put("/update/:id", addClassScheduleUpdate);
-router.delete("/delete/:id", addClassScheduleDelete);
+router.post("/create", auth, addClassScheduleCreate);
+router.get("/find", auth, addClassScheduleFind);
+router.get("/find/:id", auth, addClassScheduleFindOne);
+router.put("/update/:id", auth, addClassScheduleUpdate);
+router.delete("/delete/:id", auth, addClassScheduleDelete);
 
 module.exports = router;
