@@ -2,8 +2,10 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-
+    employeeId:{
+      type:String,
     
+    },
 
     name: {
       type: String,
@@ -11,19 +13,19 @@ const userSchema = new mongoose.Schema(
     },
 
     contact: {
-      type: String,
+      type: Number,
     },
 
     email: {
       type: String,
       required: true,
-      unique:true
+      unique: true,
     },
 
     username: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
 
     password: {
@@ -33,7 +35,7 @@ const userSchema = new mongoose.Schema(
 
     gender: {
       type: String,
-      enum: ["MALE","FEMALE","OTHER"]
+      enum: ["MALE", "FEMALE", "OTHER"],
     },
     dateOfBirth: {
       type: String,
@@ -46,12 +48,11 @@ const userSchema = new mongoose.Schema(
     bloodGroup: {
       type: String,
     },
-    
+
     presentAddress: {
       type: String,
     },
 
-  
     permanentAddress: {
       type: String,
     },
@@ -60,7 +61,6 @@ const userSchema = new mongoose.Schema(
       type: String,
     },
 
-  
     facebookUrl: {
       type: String,
     },

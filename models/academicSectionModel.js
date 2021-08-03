@@ -2,11 +2,7 @@ const mongoose = require("mongoose");
 
 const sectionSchema = new mongoose.Schema({
 
-  branch: {
-    type: String,
-    require: true
-  },
-
+ 
   name: {
     type: String,
     required: true

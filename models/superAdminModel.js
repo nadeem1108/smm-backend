@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const superAdminSchema = new mongoose.Schema({
+  adminId:{
+    type:String,
+  },
   name: {
     type: String,
     required: true,

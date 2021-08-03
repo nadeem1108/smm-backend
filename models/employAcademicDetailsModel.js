@@ -5,11 +5,8 @@ const employeeAcademicSchema = new mongoose.Schema(
   
     employeeObjectId:{
       type:String,
-      required:true,
     },
-    branch: {
-      type: String,
-    },
+    
     role: {
       type: String,
       enum: ["ADM", "DIR", "EMP", "OFB", "TCR", "SCH"],

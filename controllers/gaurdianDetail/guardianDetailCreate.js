@@ -5,7 +5,7 @@ const validateRegisterInput = require("../../validations/gaurdianDetail");
 
 module.exports = (req, res, next) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-  
+
   // Check Validation
   if (!isValid) {
     return res.status(400).json(errors);
@@ -21,13 +21,7 @@ module.exports = (req, res, next) => {
     moterName,
     occupation,
     presentAddress,
-    presentCity,
-    presentState,
-    presentPincode,
     permanentAddress,
-    permanentCity,
-    permanentState,
-    permanentPincode,
   } = req.body;
 
   const user = new GuardianDetails({
@@ -40,13 +34,7 @@ module.exports = (req, res, next) => {
     moterName,
     occupation,
     presentAddress,
-    presentCity,
-    presentState,
-    presentPincode,
     permanentAddress,
-    permanentCity,
-    permanentState,
-    permanentPincode,
   });
   console.log(user);
   user

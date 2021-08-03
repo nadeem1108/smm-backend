@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const studentDetails = new mongoose.Schema({
+  studentId: {
+    type: String,
+  },
+
   firstName: {
     type: String,
     required: true,
@@ -43,7 +47,7 @@ const studentDetails = new mongoose.Schema({
   presentAddress: {
     type: String,
   },
-  
+
   permanentAddress: {
     type: String,
   },

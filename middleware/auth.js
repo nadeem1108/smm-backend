@@ -4,7 +4,7 @@ var jwt = require('jsonwebtoken');
 module.exports=(req,res,next)=>{
     try{
         var etoken = req.headers.authorization.split(" ")[1];
-        var decode = jwt.verify(etoken,'secretboot');
+        var decode = jwt.verify(etoken,'secret');
         req.userData=decode;
         next();
     }catch{

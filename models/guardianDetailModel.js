@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
 const guardianDetailSchema = new mongoose.Schema({
-  studentObjectId:{
-    type:String,
-    required:true,
+  studentObjectId: {
+    type: String,
   },
   firstName: {
     type: String,
@@ -33,25 +32,7 @@ const guardianDetailSchema = new mongoose.Schema({
   presentAddress: {
     type: String,
   },
-  presentCity: {
-    type: String,
-  },
-  presentState: {
-    type: String,
-  },
-  presentPincode: {
-    type: String,
-  },
   permanentAddress: {
-    type: String,
-  },
-  permanentCity: {
-    type: String,
-  },
-  permanentState: {
-    type: String,
-  },
-  permanentPincode: {
     type: String,
   },
 });

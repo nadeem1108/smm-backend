@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //middleware
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
 
 //closeMiddleware
 const addAcademicClassCreate = require("../controllers/academicClass/academicClassCreate");
@@ -11,10 +11,10 @@ const addAcademicClassFindOne = require("../controllers/academicClass/academicCl
 const addAcademicClassUpdate = require("../controllers/academicClass/academicClassUpdate");
 const addAcademicClassDelete = require("../controllers/academicClass/academicClassDelete");
 
-router.post("/create", auth, addAcademicClassCreate);
-router.get("/find", auth, addAcademicClassFind);
-router.get("/find/:id", auth, addAcademicClassFindOne);
-router.put("/update/:id", auth, addAcademicClassUpdate);
-router.delete("/delete/:id", auth, addAcademicClassDelete);
+router.post("/create",  addAcademicClassCreate);
+router.get("/find",  addAcademicClassFind);
+router.get("/find/:id",  addAcademicClassFindOne);
+router.put("/update/:id",  addAcademicClassUpdate);
+router.delete("/delete/:id",  addAcademicClassDelete);
 
 module.exports = router;

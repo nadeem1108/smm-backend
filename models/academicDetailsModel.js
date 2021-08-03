@@ -4,7 +4,6 @@ const academicDetailsSchema = new mongoose.Schema({
 
   studentObjectId:{
     type:String,
-    required:true,
   },
 
   academicYear: {

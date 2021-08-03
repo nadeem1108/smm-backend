@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 
 const subjectSchema = new mongoose.Schema({ 
 
-  branch: {
-    type: String,
-    require: true,
-  },
+  
 
   subjectName: {
     type: String,

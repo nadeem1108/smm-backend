@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema(
   {
     employeeObjectId:{
       type:String,
-      required:true,
     },
 
     bankName: {

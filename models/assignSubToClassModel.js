@@ -4,13 +4,8 @@ const classAssignSchema = new mongoose.Schema({
 
   subjectObjectId:{
     type:String,
-    required:true,
   },
-  branch: {
-    type: String,
-    require: true,
-  },
-
+ 
   className: {
     type: String,
     required: true,

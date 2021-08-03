@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 
 const classScheduleSchema = new mongoose.Schema({
-  branch: {
-    type: String,
-    require: true,
-  },
+ 
 
   className: {
     type: String,

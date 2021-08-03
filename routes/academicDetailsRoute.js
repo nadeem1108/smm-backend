@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 //middleware
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
 
 //closeMiddleware
 const academicDetailsRouteCreate = require("../controllers/academicDetails/academicDetailsCreate");
@@ -12,10 +12,10 @@ const academicDetailsRouteFind = require("../controllers/academicDetails/academi
 const academicDetailsRouteFindOne = require("../controllers/academicDetails/academicDetailsFindOne");
 const academicDetailsRouteUpdate = require("../controllers/academicDetails/academicDetailsUpdate");
 
-router.post("/create", auth, academicDetailsRouteCreate);
-router.delete("/delete/:id", auth, academicDetailsRouteDelete);
-router.get("/find", auth, academicDetailsRouteFind);
-router.get("/find/:id", auth, academicDetailsRouteFindOne);
-router.put("/update/:id", auth, academicDetailsRouteUpdate);
+router.post("/create",  academicDetailsRouteCreate);
+router.delete("/delete/:id",  academicDetailsRouteDelete);
+router.get("/find",  academicDetailsRouteFind);
+router.get("/find/:id",  academicDetailsRouteFindOne);
+router.put("/update/:id",  academicDetailsRouteUpdate);
 
 module.exports = router;

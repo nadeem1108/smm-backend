@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 
 //middleware
-const auth = require("../middleware/auth");
+// const auth = require("../middleware/auth");
 
 
 //closeMiddleware
@@ -11,8 +11,8 @@ const notificationUpdate = require("../controllers/notification/notificationUpda
 const notificationDelete = require("../controllers/notification/notificationDelete");
 
 
-route.post("/create", auth, notificationCreate);
-route.put("/update/:id", auth, notificationUpdate);
-route.delete("/delete/:id", auth, notificationDelete);
+route.post("/create",  notificationCreate);
+route.put("/update/:id",  notificationUpdate);
+route.delete("/delete/:id",  notificationDelete);
 
 module.exports = route;
