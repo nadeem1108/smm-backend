@@ -31,9 +31,9 @@ module.exports = (req, res, next) => {
         password: req.body.password,
         password2: req.body.password2,
         presentAddress: req.body.presentAddress,
-        
+
         permanentAddress: req.body.permanentAddress,
-       
+
         priviousSchoolName: req.body.priviousSchoolName,
         remarks: req.body.remarks,
         emergencyno: req.body.emergencyno,
@@ -47,7 +47,12 @@ module.exports = (req, res, next) => {
           newUser.password = hash;
           newUser
             .save()
-            .then((user) => res.json(user))
+            .then((data) => {
+              res.status(201).json({
+                msg: "Data added Sucessfully",
+                data: data,
+              });
+            })
             .catch((err) => console.log(err));
         });
       });

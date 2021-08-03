@@ -20,7 +20,10 @@ module.exports = (req, res, next) => {
           .status(400)
           .send({ message: "error whie finding data of particular id" });
       } else {
-        res.send(data);
+        res.status(200).json({
+          msg: "Data Updated successfully",
+          data: data,
+        });
       }
     })
     .catch((err) => {

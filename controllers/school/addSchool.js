@@ -39,7 +39,12 @@ module.exports = (req, res) => {
           newUser.password = hash;
           newUser
             .save()
-            .then((user) => res.json(user))
+            .then((data) => {
+              res.status(201).json({
+                msg: "Data added Sucessfully",
+                data: data,
+              });
+            })
             .catch((err) => console.log(err));
         });
       });

@@ -22,8 +22,10 @@ module.exports = (req, res) => {
   user
     .save(user)
     .then((data) => {
-      res.send(data);
-    })
+      res.status(201).json({
+        msg:"Data added Sucessfully", 
+        data:data
+    })})
     .catch((err) => {
       res.status(500).send({
         mesaage: err.message || "some error occured while creating data",
