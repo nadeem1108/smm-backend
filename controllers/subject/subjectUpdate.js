@@ -11,8 +11,7 @@ module.exports = (req, res, next) => {
     return res.status(400).json(errors);
   }
   const id = req.params.id;
-  SubjectDB
-    .findByIdAndUpdate(id, req.body, { userFindAndModify: false })
+  SubjectDB.findByIdAndUpdate(id, req.body, { upsert: true, new: true })
     .then((data) => {
       if (!data) {
         res

@@ -10,9 +10,9 @@ module.exports = (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const { branch, className, sec, subject } = req.body;
+  const {  className, sec, subject } = req.body;
   const assignSubToClass = AssignSubToClass({
-    branch,
+    
     className,
     sec,
     subject,

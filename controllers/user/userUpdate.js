@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   }
   const id = req.params.id;
   userDB
-    .findByIdAndUpdate(id, req.body, { userFindAndModify: true })
+    .findByIdAndUpdate(id, req.body, { upsert: true, new: true })
     .then((data) => {
       if (!data) {
         res

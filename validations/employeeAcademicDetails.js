@@ -4,16 +4,13 @@ const isEmpty = require("./is-empty");
 module.exports = function validateRegisterInput(data) {
   let errors = {};
 
-  data.branch = !isEmpty(data.branch) ? data.branch : "";
   data.role = !isEmpty(data.role) ? data.role : "";
   data.joiningDate = !isEmpty(data.joiningDate) ? data.joiningDate : "";
   data.designation = !isEmpty(data.designation) ? data.designation : "";
   data.qualification = !isEmpty(data.qualification) ? data.qualification : "";
   data.experienceDetail = !isEmpty(data.experienceDetail) ? data.experienceDetail : "";
 
-  if (Validator.isEmpty(data.branch)) {
-    errors.branch = "Branch field is required";
-  }
+  
 
   if (Validator.isEmpty(data.role)) {
     errors.role = "Role field is required";

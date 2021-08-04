@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     return res.status(400).json(errors);
   }
   const {
-    branch,
+   
     role,
     joiningDate,
     designation,
@@ -20,7 +20,7 @@ module.exports = (req, res, next) => {
     totalExperience,
   } = req.body;
   const user = UserDB({
-    branch,
+    
     role,
     joiningDate,
     designation,

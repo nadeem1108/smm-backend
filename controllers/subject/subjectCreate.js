@@ -10,10 +10,10 @@ module.exports = (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const { branch, subjectName, subjectCode, subjectAuthor, subjectType } =
+  const { subjectName, subjectCode, subjectAuthor, subjectType } =
     req.body;
   const subject = SubjectDB({
-    branch,
+   
     subjectName,
     subjectCode,
     subjectAuthor,

@@ -10,9 +10,9 @@ module.exports = (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const { branch, name, cap } = req.body;
+  const {  name, cap } = req.body;
   const academicSection = SectionDB({
-    branch: branch,
+  
     name: name,
     cap:cap
   });

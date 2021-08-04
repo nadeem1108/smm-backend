@@ -21,9 +21,7 @@ const academicDetailsSchema = new mongoose.Schema({
   admissionDate: {
     type: Date,
   },
-  branch: {
-    type: String,
-  },
+ 
   standard: {
     type: String,
   },

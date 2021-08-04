@@ -10,9 +10,9 @@ module.exports = (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const { branch, className, sec } = req.body;
+  const {  className, sec } = req.body;
   const classSchedule = ClassSchedule({
-    branch,
+    
     className,
     sec,
     

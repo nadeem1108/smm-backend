@@ -16,7 +16,7 @@ module.exports = (req, res) => {
       return res.status(400).json(errors);
     } else {
       const newUser = new schoolDB({
-        branchName: req.body.branchName,
+        
         schoolName: req.body.schoolName,
         contact: req.body.contact,
         email: req.body.email,

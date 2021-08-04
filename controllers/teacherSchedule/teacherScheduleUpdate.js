@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
   
   const id = req.params.id;
   TeacherSchedule
-    .findByIdAndUpdate(id, req.body, { userFindAndModify: true })
+    .findByIdAndUpdate(id, req.body, {upsert:true,new:true})
     .then((data) => {
       if (!data) {
         res

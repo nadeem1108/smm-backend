@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
     registrationNumber,
     rollNumber,
     admissionDate,
-    branch,
+    
     standard,
     sec,
     category,
@@ -26,7 +26,7 @@ module.exports = (req, res, next) => {
     registrationNumber,
     rollNumber,
     admissionDate,
-    branch,
+   
     standard,
     sec,
     category,

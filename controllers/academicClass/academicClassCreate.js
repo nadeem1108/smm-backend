@@ -11,9 +11,9 @@ module.exports = (req, res, next) => {
     return res.status(400).json(errors);
   }
 
-  const { branch, name, classNum, sec } = req.body;
+  const {  name, classNum, sec } = req.body;
   const academicClass = ClassDB({
-    branch: branch,
+   
     name: name,
     classNum: classNum,
     sec: sec,

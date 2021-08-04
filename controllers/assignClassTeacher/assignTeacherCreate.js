@@ -10,9 +10,9 @@ module.exports = (req, res, next) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const { branch, className, sec, teacherName } = req.body;
+  const {  className, sec, teacherName } = req.body;
   const assignTeacher = AssignTeacher({
-    branch: branch,
+    
     className: className,
     sec: sec,
     teacherName: teacherName,
