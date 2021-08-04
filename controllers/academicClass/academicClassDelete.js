@@ -3,8 +3,7 @@ const ClassDB = require("../../models/academicClassModel");
 module.exports = (req, res) => {
   const id = req.params.id;
 
-  ClassDB
-    .findByIdAndDelete(id)
+  ClassDB.findByIdAndDelete(id)
     .then((data) => {
       if (!data) {
         res
@@ -13,6 +12,7 @@ module.exports = (req, res) => {
       } else {
         res.send({
           message: "User was deleted successfully!",
+          data: data,
         });
       }
     })
