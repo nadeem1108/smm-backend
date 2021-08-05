@@ -5,15 +5,22 @@ const validateRegisterInput = require("../../validations/hostel");
 
 module.exports = (req, res, next) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-  
+
   // Check Validation
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  const { transportRoute, vehicleNumber, hostelName, roomNumber } = req.body;
+  const {
+    studentObjectId,
+    transportRoute,
+    vehicleNumber,
+    hostelName,
+    roomNumber,
+  } = req.body;
 
   const user = new userDB({
+    studentObjectId,
     transportRoute,
     vehicleNumber,
     hostelName,
@@ -24,9 +31,10 @@ module.exports = (req, res, next) => {
     .save(user)
     .then((data) => {
       res.status(201).json({
-        msg:"Data added Sucessfully", 
-        data:data
-    })})
+        msg: "Data added Sucessfully",
+        data: data,
+      });
+    })
     .catch((err) => {
       res.status(500).send({
         mesaage: err.message || "some error occured while creating data",

@@ -12,6 +12,7 @@ module.exports = (req, res, next) => {
   }
 
   const {
+    studentObjectId,
     firstName,
     lastName,
     contact,
@@ -25,6 +26,7 @@ module.exports = (req, res, next) => {
   } = req.body;
 
   const user = new GuardianDetails({
+    studentObjectId,
     firstName,
     lastName,
     contact,

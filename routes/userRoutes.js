@@ -9,10 +9,6 @@ const userRegister = require("../controllers/user/userRegister");
 
 router.post("/register", userRegister);
 router.post("/login", userLogin);
-// router.get(
-//   "/current",
-//   passport.authenticate("jwt", { session: false }),
-//   currentUser
-// );
+
 
 module.exports = router;

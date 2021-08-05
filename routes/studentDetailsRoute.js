@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //middleware
-// const auth = require("../middleware/auth");
-
+const auth = require("../middleware/auth");
 
 //closeMiddleware
 const studentDetailsRouteCreate = require("../controllers/studentDetails/studentDetailsCreate");
@@ -12,10 +11,10 @@ const studentDetailsRouteFind = require("../controllers/studentDetails/studentDe
 const studentDetailsRouteFindOne = require("../controllers/studentDetails/studentDetailsFindOne");
 const studentDetailsRouteUpdate = require("../controllers/studentDetails/studentDetailsUpdate");
 
-router.post("/create", studentDetailsRouteCreate);
-router.delete("/delete/:id", studentDetailsRouteDelete);
-router.get("/find", studentDetailsRouteFind);
-router.get("/find/:id", studentDetailsRouteFindOne);
-router.put("/update/:id", studentDetailsRouteUpdate);
+router.post("/create", auth, studentDetailsRouteCreate);
+router.delete("/delete/:id", auth, studentDetailsRouteDelete);
+router.get("/find", auth, studentDetailsRouteFind);
+router.get("/find/:id", auth, studentDetailsRouteFindOne);
+router.put("/update/:id", auth, studentDetailsRouteUpdate);
 
 module.exports = router;

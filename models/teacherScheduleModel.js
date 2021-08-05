@@ -4,8 +4,12 @@ const teacherScheduleSchema = new mongoose.Schema({
   employeeObjectId:{
     type:String,
   },
-
- 
+  className:{
+    type:String,
+  },
+  sec:{
+    type:String,
+  },
 
   teacher: {
     type: String,
