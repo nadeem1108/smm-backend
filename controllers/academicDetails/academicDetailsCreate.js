@@ -15,7 +15,6 @@ module.exports = (req, res, next) => {
     registrationNumber,
     rollNumber,
     admissionDate,
-    
     standard,
     sec,
     category,

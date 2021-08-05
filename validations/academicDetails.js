@@ -5,7 +5,7 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   data.academicYear = !isEmpty(data.academicYear) ? data.academicYear : "";
-  data.registrationNumber = !isEmpty(data.email) ? data.email : "";
+  data.registrationNumber = !isEmpty(data.registrationNumber) ? data.registrationNumber : "";
   data.rollNumber = !isEmpty(data.rollNumber) ? data.rollNumber : "";
   data.admissionDate = !isEmpty(data.admissionDate) ? data.admissionDate : "";
   data.standard = !isEmpty(data.standard) ? data.standard : "";
@@ -20,7 +20,7 @@ module.exports = function validateRegisterInput(data) {
     errors.rollNumber = "Roll Number field is required";
   }
 
-  if (Validator.isEmpty(data.rollNumber)) {
+  if (Validator.isEmpty(data.registrationNumber)) {
     errors.registrationNumber = "Registration Number field is required";
   }
 

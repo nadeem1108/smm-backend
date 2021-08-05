@@ -4,9 +4,6 @@ const schoolSchema = new mongoose.Schema({
   schoolId: {
     type: String,
   },
-  branchName: {
-    type: String,
-  },
   schoolName: {
     type: String,
     required: true,
@@ -36,7 +33,7 @@ const schoolSchema = new mongoose.Schema({
   city: {
     type: String,
   },
-  state: {
+  stateName: {
     type: String,
   },
   country: {

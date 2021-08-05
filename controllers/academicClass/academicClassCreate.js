@@ -11,21 +11,21 @@ module.exports = (req, res, next) => {
     return res.status(400).json(errors);
   }
 
-  const {  name, classNum, sec } = req.body;
+  const { name, classNum, sec } = req.body;
   const academicClass = ClassDB({
-   
-    name: name,
-    classNum: classNum,
-    sec: sec,
+    name,
+    classNum,
+    sec,
   });
 
   academicClass
     .save(academicClass)
     .then((data) => {
       res.status(201).json({
-        msg:"Data added Sucessfully", 
-        data:data
-    })})
+        msg: "Data added Sucessfully",
+        data: data,
+      });
+    })
     .catch((err) => {
       res.status(500).send({
         mesaage: err.message || "some error occured while creating data",

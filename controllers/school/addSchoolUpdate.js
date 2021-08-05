@@ -1,6 +1,6 @@
 const schoolDB = require("../../models/adminSchoolModel");
 const asyncHandler = require("express-async-handler");
-const validateRegisterInput = require("../../validations/updateEmployee");
+const validateRegisterInput = require("../../validations/schoolUpdate");
 const bcrypt = require("bcryptjs");
 
 module.exports = (req, res) => {

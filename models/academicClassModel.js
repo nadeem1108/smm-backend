@@ -12,7 +12,7 @@ const classSchema = new mongoose.Schema({
 
   classNum: {
     type: String,
-    require: true,
+  
   },
 
   sec: {

@@ -1,7 +1,7 @@
 const userDB = require("../../models/studentDetailsModel");
 
 // Load input validations
-const validateRegisterInput = require("../../validations/addStudent");
+const validateRegisterInput = require("../../validations/studentUpdate");
 
 module.exports = (req, res, next) => {
   const { errors, isValid } = validateRegisterInput(req.body);

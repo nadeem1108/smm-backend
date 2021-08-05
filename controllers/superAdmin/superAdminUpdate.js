@@ -1,7 +1,7 @@
 const userDB = require("../../models/superAdminModel");
 
 // Load input validations
-const validateRegisterInput = require("../../validations/superAdmin");
+const validateRegisterInput = require("../../validations/superAdminUpdate");
 
 module.exports = (req, res, next) => {
   const { errors, isValid } = validateRegisterInput(req.body);

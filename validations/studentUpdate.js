@@ -8,7 +8,6 @@ module.exports = function validateRegisterInput(data) {
   data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.username = !isEmpty(data.username) ? data.username : "";
-  data.role = !isEmpty(data.role) ? data.role : "";
 
   if (!Validator.isLength(data.firstName, { min: 3, max: 30 })) {
     errors.firstName = "First Name must be between 3 and 30 characters";
@@ -38,11 +37,7 @@ module.exports = function validateRegisterInput(data) {
     errors.username = "Username field is required";
   }
 
-
-
-  if (Validator.isEmpty(data.role)) {
-    errors.role = "Role is required";
-  }
+  
 
   return {
     errors,
